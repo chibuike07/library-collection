@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    
+    <div class="small-container">
+        <h1>New Tab App</h1>
+    
+        <!-- more will go here -->
+        <form>
+            <input id="item" type="text" placeholder="New" required />
+          </form>
+          
+          <h2>Items</h2>
+          <ul></ul>
+          
+          <button>Clear All</button>
+      </div>
+    
+    
+    
+    <script>
+    
+    const form = document.querySelector('form')
+const ul = document.querySelector('ul')
+const button = document.querySelector('button')
+const input = document.getElementById('item')
+let itemsArray = localStorage.getItem('items') ? JSON.parse(localStorage.getItem('items')) : []
+
+localStorage.setItem('items', JSON.stringify(itemsArray))
+const data = JSON.parse(localStorage.getItem('items'))
+
+const liMaker = text => {
+  const li = document.createElement('li')
+  li.textContent = text
+  ul.appendChild(li)
+}
+
+form.addEventListener('submit', function(e) {
+  e.preventDefault()
+
+  itemsArray.push(input.value)
+  localStorage.setItem('items', JSON.stringify(itemsArray))
+  liMaker(input.value)
+  input.value = ''
+})
+
+data.forEach(item => {
+  liMaker(item)
+})
+
+button.addEventListener('click', function() {
+  localStorage.clear()
+  while (ul.firstChild) {
+    ul.removeChild(ul.firstChild)
+  }
+})
+/*
+//to remove items 
+localStorage.removeItem('favoriteflavor');
+var taste = localStorage.getItem('favoriteflavor');
+// -> null   
+  var car = {};
+car.wheels = 4;
+car.doors = 2;
+car.sound = 'vroom';
+car.name = 'Lightning McQueen';
+console.log( car );
+localStorage.setItem( 'car', car );
+console.log( localStorage.getItem( 'car' ) );
+
+
+//to get a full html
+YUI().use('node', function(Y) {
+  if(('localStorage' in window) && window['localStorage'] !== null){
+    var key = 'lastyahoofirehose';
+
+    localStorage.setItem(key,Y.one('form').get('innerHTML'));
+
+  if(key in localStorage){
+      Y.one('#mainform').set('innerHTML',localStorage.getItem(key));
+      Y.one('#hd').append('
+
+  // adding objects to arrary in local storage
+function addEntry() {
+    // Parse any JSON previously stored in allEntries
+    var existingEntries = JSON.parse(localStorage.getItem("allEntries"));
+    if(existingEntries == null) existingEntries = [];
+    var entryTitle = document.getElementById("entryTitle").value;
+    var entryText = document.getElementById("entryText").value;
+    var entry = {
+        "title": entryTitle,
+        "text": entryText
+    };
+    localStorage.setItem("entry", JSON.stringify(entry));
+    // Save allEntries back to local storage
+    existingEntries.push(entry);
+    localStorage.setItem("allEntries", JSON.stringify(existingEntries));
+};// another same function
+const object = {
+name: 'ayyan',
+age: 29,
+number: 03070084689,
+};
+const arr = JSON.parse(localstorage.getItem('key_name')) || [];
+arr.push(object);
+localstorage.setitem(json.strigify('key_name', arr);
+  */  
+    </script>
+</body>
+</html>

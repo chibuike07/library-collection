@@ -1,0 +1,102 @@
+
+
+body {
+    background-color: #cccccc;
+font-size: 1.3em;
+padding: 2.0em;
+align-self: center;
+font-family:Arial, Helvetica, sans-serif 
+}
+
+
+.sideArea{
+    border:5px solid #ffff00; 
+    background-color:orange;
+    float: left;
+    width: 93% ;
+    text-align: center;
+border-image-outset: 5px solid;
+padding: 20px;
+font-size: 14px 1.4rem;
+}
+
+table#t01 tr:nth-child(odd){
+    background-color:  darkkhaki;
+}
+
+table,th {
+    border-collapse: collapse;
+    border: 5px solid hsl(0, 0%, 100%);
+    background:linear-gradient(45deg,sienna,rgb(252, 129, 7));
+    background-color: sienna;
+    width: 600px 93%;
+    
+}
+
+
+table#t01 th{
+    border-left: none;
+    border-right:none;
+    color: darkkhaki;
+padding-left: 30px;
+    text-align:left;
+    width:80%;
+}
+td{
+text-align:initial;
+padding-block-start: 10px;
+padding-left: 30px;
+}
+.positionMe{
+     
+      float: left;
+      border: 5px solid #ffff00; 
+}
+
+.joy{
+    text-align: center;
+    
+}
+button{
+    font-size: 20px;
+    background-color: blue
+}
+.left{
+float:left;
+padding-left: 10px;
+
+}
+
+.com{
+float: left;
+
+}
+.up{
+float: left;
+border-left:5px solid #ffffff;
+padding-left: 10px;
+
+}
+
+
+.clear{
+clear: both;
+}
+
+
+.down{
+
+border-left:2px solid #ffffff;
+float: left;
+}
+
+.main{
+    border-bottom: 5px solid #bbbbbb;
+    border-top: 5px solid  #ffffff;
+color: #bdb76b;
+background-color: purple;
+padding-inline-start: 40px;
+padding-top: 10px;
+padding-right: 60px;
+}
+@media only screen and (max-width:800px){}

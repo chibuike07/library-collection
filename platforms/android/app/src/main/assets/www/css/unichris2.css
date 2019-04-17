@@ -1,0 +1,19 @@
+h1,h2,h4{
+    color:#ff0000;
+    text-align: center;
+
+}
+body{
+    background-color: rgb(226, 221, 142);
+    color: #000000;
+}
+
+
+img{
+    width:50%;
+    height: 750px;
+float: right;
+margin: 10px;
+padding: 5px solid;
+}
+@media screen and (max-width:800px){}
