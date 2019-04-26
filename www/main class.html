@@ -1,44 +1,94 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>library collections</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="../www/css/library books.css" />
-    <script
-    src="https://code.jquery.com/jquery-3.3.1.min.js"
-    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-    crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 
-    
+
 </head>
+
 <body>
 
 
     <h1 id="our-headline">library collection</h1> <br>
-    <p class="para1">Christopher university library is a holding of collection of books and non materials . It's for every one , students and staff of unichris and the library is set out to serve the patrons need , so do feel at home and you are free to come to any of the library staff for help in tracing of the reference books that you need. </p>
-<p class="para2"> This are list of recent entries of book in unichris library  </p>
-<p> <a href="reference books.html"><button> reference books</button></a> <a href="fictions.html"><button>fictions</button></a> <a href="non-fiction"><button>non-fiction</button></a> <a href="journals.html"><button>journals</button></a> 
+    <p class="para1">Christopher university library is a holding of collection of books and non materials . It's for
+        every one , students and staff of unichris and the library is set out to serve the patrons need , so do feel at
+        home and you are free to come to any of the library staff for help in tracing of the reference books that you
+        need. </p>
+    <p class="para2"> This are list of recent entries of book in unichris library </p>
+    <p> <a href="reference books.html"><button> reference books</button></a> <a
+            href="fictions.html"><button>fictions</button></a> <a href="non-fiction"><button>non-fiction</button></a> <a
+            href="journals.html"><button>journals</button></a></p>
 
-    <input type="text" id="myInput" title="search collections"  onkeyup="myFunction()">
-    <placeholder="search for names.." title="Type in a name"></placeholder>
-    
-        
-    
-<ol id="our-listItem">
+    <input type="text" id="myInput" title="search collections" onkeyup="myFunction()" placeholder="search for names.."
+        title="Type in a name" />
 
-</ol>            
-            
-   
+    <ol id="our-listItem">
 
-
-<input type="text" id="newItem"><br>
+    </ol>
 
 
-<script type="text/javascript" src="../www/js/main class.js"></script>
 
-<p> <a href="christopher.html"><h3><capitalize><button>home</button></capitalize></h3></a></p>
+
+    <input type="text" id="newItem"><br>
+
+
+    <script type="text/javascript" src="../www/js/main class.js"></script>
+    <script type="text/javascript" src="../www/js/classesCatalog.js"></script>
+    <script>
+
+        // console.log("hello");
+        var extractedFormValue = decodeURIComponent(window.location.search);
+        extractedFormValue = extractedFormValue.substring(1);
+        // var queries = extractedFormValue.split("&");
+        // for (var i = 0; i < queries.length; i++) {
+        //     document.write(queries[i] + "<br>");
+        // }
+
+        loadMainClassFor = (formValue) => {
+            let mainClassMapToRender = [];
+            const mainClassValues = mainClasses[formValue];
+
+            if (mainClassValues == null) {
+                //main class not found
+                mainClassMapToRender = { ...mainClasses } //javascript spread
+            } else {
+                mainClassMapToRender[formValue] = mainClassValues
+            }
+
+            renderMainClass(mainClassMapToRender);
+        }
+
+        renderMainClass = (mainClassesMapForRendering) => {
+            const orderedMainClassList = document.getElementById("our-listItem");
+            Object.keys(mainClassesMapForRendering).map((mainClass) => {
+                const liElement = document.createElement("li");
+                const aElement = document.createElement("a");
+                aElement.setAttribute("href", "subclass.html?mainclass=" + mainClass);
+                aElement.innerText = mainClass;
+
+                liElement.appendChild(aElement);
+
+                orderedMainClassList.appendChild(liElement)
+            });
+        }
+
+
+        loadMainClassFor(extractedFormValue);
+// alert(mainClasses["literature and language"])</script>
+
+    <a href="christopher.html">
+        <h3>
+            <capitalize><button>home</button></capitalize>
+        </h3>
+    </a></p>
 
 </body>
+
 </html>

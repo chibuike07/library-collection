@@ -1,11 +1,3 @@
-var queryString = decodeURIComponent(window.location.search);
-queryString = queryString.substring(1);
-var queries = queryString.split("&");
-for (var i = 0; i < queries.length; i++)
-{
-  document.write(queries[i] + "<br>");
-}  
-
 
 
 
@@ -65,7 +57,7 @@ const listData = [
     { href: "Philosophy.html", description: "Philosophy,  Psychology, Religion 'Class B' " },
     { href: "Social.html", description: "Social science 'Class H' " },
     { href: "Literature.html", description: "Literature and Language 'Class P' " },
-    
+
 ]
 
 const renderListItems = (listNode, listData) => {
@@ -83,7 +75,6 @@ const renderListItems = (listNode, listData) => {
         listNode.appendChild(liElement);
     })
 }
-
 
 
 
