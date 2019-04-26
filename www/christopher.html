@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>christopher uni.</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="unichris.css">
+    <link rel="stylesheet" href="../www/css/unichris.css">
     <script
   src="https://code.jquery.com/jquery-3.4.0.js"
   integrity="sha256-DYZMCC8HTC+QDr5QNaIcfR7VSPtcISykd+6eSmBW5qo="
@@ -27,31 +27,25 @@
                    
                 </div>
             
-<p> <a href="unichris library.html"><h3><button> unichris library</button></h2></a></p>
+<p> <a href="unichris library.html"><h3><capitalize><button> Unichris Library</button></capitalize></h3></a></p>
     
 
     
-        <div class="form">
-            <form role="search" method="get" id="search-form" action="collections.html">
-                <label>
-                    <span class="screen-reader-text">Search for:</span>
-                    <input type="search" id="search-field" placeholder="Search for names.." value="" name="s" />
-                    
-                </label>
-                <input type="submit" class="search-submit" value="Search" />
-            </form>
-        </div>
-    
+<div class="form">
+    <form role="search" class="search-form" action="javascript:;" onsubmit="loadClasses(this)"> 
+        <label>
+            <span class="screen-reader-text">Search for:</span>
+            <input type="search" class="search-field" placeholder="Search &hellip;" value="" name="s" />
+        </label>
+        <input type="submit" class="search-submit" value="Search" />
+    </form>
+</div>
+
 <br>
-  
-
-<div id="result"></div>
-
-<div class="main">
     
-    <p > Christopher University offers Admission into the 
-   Jooint University Preliminary Examination Boarrd (JUPEB)
-<br>Foundation programme. </p>
+    <p > Christopher University Offers Admission Into The 
+   Joint University Preliminary Examination Boarrd (JUPEB)
+<br>Foundation Programme. </p>
 </div>
      <p style="padding-left:35px">From <b>JUPEB Foundation</b> Programme to <br/>
       <b>200 Level</b> Degree Programme.</p>
@@ -82,17 +76,24 @@
     <div class="clear"></div>
          <div class="left">
     <div class="com">  
-       <nav>call</nav><img src="../classes of collections/library image/sym_action_call.png" >
+       <nav>call</nav><img src="../www/library image/sym_action_call.png" >
     </div>
        </div>
     <div  class="down">
                    0903 775 7032 <br>
                    0903 775 7033 <br>
-                   0903 775 7037
-    </div>
-    
+                   0903 775 7037 
+    </div><br><br><br>
+     <div class="joy">
+    <a href="author.html"><button >Meet the Developer</button> </a>
+</div>
+   
 
-    <Script>
+<script  type="text/javascript" src="../www/js/classes catalog.js"></script>
+
+
+   
+   <Script>
 
 
 
@@ -107,27 +108,46 @@ var time = document.getElementById("time");
 time.innerHTML = '';
 };
 
-function myFunction(){
-    var input, filter, table, tr, td, txtValue;
-    input = document.getElementById("");
-    filter = input.value.toUpperCase();
-    table = document.getElementById("our-listItem");
-    tr = table.getElementsByTagName("tr");
-    for(i = 0; i < tr.length; i++){
-        td = tr[i].getElementsByTagName("td")[0];
-        if(td){
-        txtValue = td.textContent || td.innerText;
-      
-        
-        if(txtValue.toUpperCase().indexOf(filter) > -1){
-            tr[i].style.display = "";
-          
-        } else{
-            tr[i].style.display = "none";
-        }
-    }
+    
+function showDate(){
+var time = document.getElementById("time");
+time.innerHTML = Date();
+};
+
+function clearDate(){
+var time = document.getElementById("time");
+time.innerHTML = '';
+};
+
+const loadClasses = (formObj) => {
+console.log("got here")
+const formValue = formObj.elements[0].value;
+let foundCourse = mainClasses[formValue];
+//$ ('#result').append(foundCourse ) 
+//$('#value').append(formValue)
+console.log(foundCourse)
+
+//result.innerHTML = JSON.stringify(foundCourse)
+//foundCourse.toString()
+//document.getElementById("result").innerHTML = foundCourse
+if (typeof foundCourse == 'undefined'){
+    console.log("nothing found")
+}else{
+    //ToDo: pass the foung course to course-dsiplay.html
+   // window.location.href="course-display.html"
 }
-}
+// data transfer to main class.html
+var str = formValue;
+var result = str.link("subclass.html ")
+//var value = formValue;
+//var mainclass = foundCourse;
+var queryString = "?<h3>" + result + "</h3><br>" ;
+window.location.href = "main class.html" + queryString;//var mainclass = foundCourse;
+var queryString = "?<h3>" + result + "</h3><br>" ;
+window.location.href = "main class.html" + queryString;
+
+
+} 
 
 </script>
 </body>
