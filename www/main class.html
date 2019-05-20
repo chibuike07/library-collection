@@ -25,15 +25,31 @@
     <p> <a href="reference books.html"><button> reference books</button></a> <a
             href="fictions.html"><button>fictions</button></a> <a href="non-fiction"><button>non-fiction</button></a> <a
             href="journals.html"><button>journals</button></a></p>
+<<<<<<< HEAD
+
+    <ol id="our-listItem">
+
+    </ol>
+=======
+
+    <input type="text" id="myInput" title="search collections" onkeyup="myFunction()" placeholder="search for names.."
+        title="Type in a name" />
 
     <ol id="our-listItem">
 
     </ol>
 
+
+
+
+    <input type="text" id="newItem"><br>
+>>>>>>> 71a8b4807604d7e6dc67fa63845a8d056a22e4e8
+
     <script type="text/javascript" src="../www/js/main class.js"></script>
     <script type="text/javascript" src="../www/js/classesCatalog.js"></script>
     <script>
 
+<<<<<<< HEAD
         // console.log("hello");
         var extractedFormValue = decodeURIComponent(window.location.search);
         extractedFormValue = extractedFormValue.substring(1);
@@ -85,6 +101,57 @@ console.log(mainClasses)
     <a href="unichris library.html"><h3 style="float:left"><capitalize><button> Nelson Mandela Library</button></capitalize></h3></a>   
      <a href="christopher.html"><h3 style="float:left"><capitalize><button>Back to home</button></capitalize></h3></a>
 
+=======
+    <script type="text/javascript" src="../www/js/main class.js"></script>
+    <script type="text/javascript" src="../www/js/classesCatalog.js"></script>
+    <script>
+
+        // console.log("hello");
+        var extractedFormValue = decodeURIComponent(window.location.search);
+        extractedFormValue = extractedFormValue.substring(1);
+        // var queries = extractedFormValue.split("&");
+        // for (var i = 0; i < queries.length; i++) {
+        //     document.write(queries[i] + "<br>");
+        // }
+
+        loadMainClassFor = (formValue) => {
+            let mainClassMapToRender = [];
+            const mainClassValues = mainClasses[formValue];
+
+            if (mainClassValues == null) {
+                //main class not found
+                mainClassMapToRender = { ...mainClasses } //javascript spread
+            } else {
+                mainClassMapToRender[formValue] = mainClassValues
+            }
+
+            renderMainClass(mainClassMapToRender);
+        }
+
+        renderMainClass = (mainClassesMapForRendering) => {
+            const orderedMainClassList = document.getElementById("our-listItem");
+            Object.keys(mainClassesMapForRendering).map((mainClass) => {
+                const liElement = document.createElement("li");
+                const aElement = document.createElement("a");
+                aElement.setAttribute("href", "subclass.html?mainclass=" + mainClass);
+                aElement.innerText = mainClass;
+
+                liElement.appendChild(aElement);
+
+                orderedMainClassList.appendChild(liElement)
+            });
+        }
+
+
+        loadMainClassFor(extractedFormValue);
+// alert(mainClasses["literature and language"])</script>
+
+    <a href="christopher.html">
+        <h3>
+            <capitalize><button>home</button></capitalize>
+        </h3>
+    </a></p>
+>>>>>>> 71a8b4807604d7e6dc67fa63845a8d056a22e4e8
 
 </body>
 
