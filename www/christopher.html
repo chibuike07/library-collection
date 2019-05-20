@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>christopher uni.</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../www/css/side bar.css">
     <link rel="stylesheet" href="../www/css/unichris.css">
     <script
   src="https://code.jquery.com/jquery-3.4.0.js"
@@ -16,7 +17,7 @@
     
     
     <div id ="container">
-    <button onmouseout="clearDate()" onmouseover="showDate()">view $ hide date </button>
+    <button onmouseout="clearDate()" onmouseover="showDate()">view & hide date </button>
     <hi id="time"></hi>
     </div>
         <div class="headerArea">
@@ -27,7 +28,6 @@
                    
                 </div>
             
-<p> <a href="unichris library.html"><h3><capitalize><button> Unichris Library</button></capitalize></h3></a></p>
     
 
     
@@ -85,70 +85,15 @@
                    0903 775 7037 
     </div><br><br><br>
      <div class="joy">
-    <a href="author.html"><button >Meet the Developer</button> </a>
+            <p> <a href="unichris library.html"><h3 style="float:left"><capitalize><button> Nelson Mandela Library</button></capitalize></h3></a></p>
+            <a href="author.html"><h3 style="float:left"><capitalize><button >Meet the Developer</button></capitalize></h3></a>
 </div>
    
-
-<script  type="text/javascript" src="../www/js/classes catalog.js"></script>
+<script  type="text/javascript" src="../www/js/christo.js"></script>
+<script  type="text/javascript" src="../www/js/classesCatalog.js"></script>
 
 
    
-   <Script>
-
-
-
-
-function showDate(){
-var time = document.getElementById("time");
-time.innerHTML = Date();
-};
-
-function clearDate(){
-var time = document.getElementById("time");
-time.innerHTML = '';
-};
-
-    
-function showDate(){
-var time = document.getElementById("time");
-time.innerHTML = Date();
-};
-
-function clearDate(){
-var time = document.getElementById("time");
-time.innerHTML = '';
-};
-
-const loadClasses = (formObj) => {
-console.log("got here")
-const formValue = formObj.elements[0].value;
-let foundCourse = mainClasses[formValue];
-//$ ('#result').append(foundCourse ) 
-//$('#value').append(formValue)
-console.log(foundCourse)
-
-//result.innerHTML = JSON.stringify(foundCourse)
-//foundCourse.toString()
-//document.getElementById("result").innerHTML = foundCourse
-if (typeof foundCourse == 'undefined'){
-    console.log("nothing found")
-}else{
-    //ToDo: pass the foung course to course-dsiplay.html
-   // window.location.href="course-display.html"
-}
-// data transfer to main class.html
-var str = formValue;
-var result = str.link("subclass.html ")
-//var value = formValue;
-//var mainclass = foundCourse;
-var queryString = "?<h3>" + result + "</h3><br>" ;
-window.location.href = "main class.html" + queryString;//var mainclass = foundCourse;
-var queryString = "?<h3>" + result + "</h3><br>" ;
-window.location.href = "main class.html" + queryString;
-
-
-} 
-
-</script>
+   
 </body>
 </html>
