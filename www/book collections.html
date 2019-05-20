@@ -58,7 +58,7 @@
         </h3>
     </a>
 
-    <table>
+    <table id="table">
     
     </table>
     <script>
@@ -100,6 +100,7 @@
         setTimeout("rotate()", pause);// the time to which to slide show stops and if it stops start 
     }
     rotate();
+
         let expectedSubClass = decodeURIComponent(window.location.search);
         expectedSubClass = expectedSubClass.substring(1);
         expectedSubClass = expectedSubClass.split("=")[1];
@@ -111,40 +112,65 @@
             if (typeof subClass == 'undefined') {
                 alert("Books no longer in collection");
             } else {
-                collectionMapToRender[subclassName] = subClass
-                
+                collectionMapToRender[subclassName] = subClass //Unnecessary as it was not used
+                renderSubClass(subClass);               
             }
-            renderSubClass(subClass);
         }
         
-        renderSubClass = (collections) => {
+        renderSubClass = (aSubClass) => { //aSubClass here is an object pointing to subclass and has this structure { collection: [books(objects)]}. the books needs to be extracted
+        // and looped through
             // SIMPLY ADD OR REMOVE VALUES IN THE ARRAY FOR TABLE HEADERS.
  // FIRST CREATE A TABLE STRUCTURE BY ADDING A FEW HEADERS AND
     // ADD THE TABLE TO YOUR WEB PAGE.
-    function generateTableHead(table, data){
-        let thead = table.createTHead();
-        let row = thead.insertRow();
-        for (let key of data){
-            let th = document.createElement("th");
-            let text = document.createTextNode(key);
-            th.appendChild(text);
-            row.appendChild(th);
-        }
-    }
-    function generateTable(table,data){
-        for (let element of data) {
-            let row = table.insertRow();
-            for (key in element){
-                let cell = row.insertCell();
-                let text = document.createTextNode(element[key]);
-                console.log(element[key])
-                cell.appendChild(text);
-            }
-        }
+    // function generateTableHead(table, data){
+    //     let thead = table.createTHead();
+    //     let row = thead.insertRow();
+    //     for (let key of data){
+    //         let th = document.createElement("th");
+    //         let text = document.createTextNode(key);
+    //         th.appendChild(text);
+    //         row.appendChild(th);
+    //     }
+    // }
+    // function generateTable(table,data){
+    //     for (let element of data) {
+    //         let row = table.insertRow();
+    //         for (key in element){
+    //             let cell = row.insertCell();
+    //             let text = document.createTextNode(element[key]);
+    //             console.log(element[key])
+    //             cell.appendChild(text);
+    //         }
+    //     }
+    // }
+    function generateTableRows(table,data){
+        // see information on map function applied to an array - https://www.w3schools.com/jsref/jsref_map.asp - I am using it 
+        // here to access the elements of the array for use. I ignore the returned array, notice I did not assign the result of the map to a variable
+        //First loop - looping tru book objects
+        data.map((aBookObject) => {
+            const tr = document.createElement("tr")  //tr for the entire fields of a book object which corresponds to our columns - one book, one tr and many tds
+            //Extract all field values in the book object
+            //Objects.values returns an array of all values of the fields/keys in the passed objects, in this case aBookObject, so now I have an array to call map function
+            //See info on what is an object https://www.w3schools.com/js/js_objects.asp
+            //See info on Objects class https://javascript.info/keys-values-entries
+    
+            const fieldValues = Object.values(aBookObject)  // this line is not necessay just for readability for you. I could have called map directly like this - Object.values(aBookObject).map((aFieldValue) => {})
+            //Second loop - looping through values of fields( each value will be sed to create a column) in a book
+            fieldValues.map((aFieldValue) => {   //each field needs a td
+                const td = document.createElement("td")
+                td.innerText = aFieldValue
+                tr.appendChild(td)
+            })
+            //By now, the tr has as many td as the fields in the bookObject e.g. Author, year etc
+            table.appendChild(tr)
+        }) 
     }
     let table = document.querySelector("table");
-    let data = Object.keys(collections);
-    generateTableHead(table, data)
-    generateTable(table, collections)
+    // let data = Object.keys(collections); //guess work
+    let data = aSubClass["collection"] //a way to retrive fields in objects - We now have an array of [books(objects)] ready to be looped
+    // generateTableHead(table, data) // PLEASE REWRITE - You can had code the header in array(e.g. ["Author", "Year"] etc) and use map to generate it like i did above
+    generateTableRows(table, data)
         }   
    loadSubClassesFor(expectedSubClass)
+
+   </script>
