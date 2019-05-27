@@ -1,166 +1,160 @@
 const subclasses = [];
-subclasses["Encyclopedia 'Class AC'"] = {
-    url: "Encyclopedia.html",
+subclasses["Encyclopedia 'SubClass AC'"] = {
+  
     collection: []
   },
-  subclasses["Dictionary and other reference work 'SubClass AG'"] = {
-    url: "Dictionary.html",
-    collection: []
+  subclasses["Dictionary and other reference work 'SubClass AG'"] = { 
+  collection: []
   },
-
+  
   subclasses["Indexes 'SubClass AI "] = {
-    url: "Indexes.html",
     collection: []
   },
-  subclasses["Newspapers 'Class AN'"] = {
-    url: "Newspapers.html",
+  subclasses["Newspapers 'SubClass AN'"] = {
     collection: []
   },
-  subclasses["periodicals 'class AP'"] = {
-    url: "Periodicals.html",
+  subclasses["periodicals 'SubClass AP'"] = {
+    
     collection: []
   },
   subclasses["Yearbooks, Almanacs, Directories 'AY'"] = {
-    url: "Yearbooks.html",
+    
     collection: []
   },
-
-
   subclasses["Philosophy(General) 'Subclass B'"] = {
-    url: "General philosophy.html",
+    
     collection: []
   },
-  subclasses["Logic 'Subclass BC' "] = {
-    url: "Logic.html",
+  subclasses["Logic 'SubClass BC'"] = {
+    
     collection: []
   },
-  subclasses["Speculative Philosophy 'Subclass BD' "] = {
-    url: "Speculative philosophy.html",
+  subclasses["Speculative Philosophy 'SubClass BD' "] = {
+    
     collection: []
   },
-  subclasses["Ethics 'Class BJ'"] = {
-    url: "Ethics.html",
+  subclasses["Ethics 'SubClass BJ'"] = {
+    
     collection: []
   },
-  subclasses["Religion, mythology, Rationalism' Subclass BL'"] = {
-    url: "Religion.html",
+  subclasses["Religion, mythology, Rationalism' SubClass BL'"] = {
+  
     collection: []
   },
-  subclasses["Judaism 'Class BM' "] = {
-    url: "Judaism.html",
+  subclasses["Judaism 'SubClass BM' "] = {
+    
     collection: []
   },
-  subclasses["Buddhism 'Subclass BQ'"] = {
-    url: "Buddhism.html",
+  subclasses["Buddhism 'SubSubClassclass BQ'"] = {
+    
     collection: []
   },
-  subclasses["Christainity 'Subclass BR' "] = {
-    url: "christainity.html",
+  subclasses["Christainity 'SubClass BR' "] = {
+    
     collection: []
   },
   subclasses["The Bible 'Subclass BS'"] = {
-    url: "Bible.html",
+    
     collection: []
   },
-  subclasses["Dotrinal Theology 'Subclass BT'"] = {
-    url: "Dotrinal.html",
+  subclasses["Dotrinal Theology 'SubClass BT'"] = {
+    
     collection: []
   },
-  subclasses["Practical Theology'Subclass BV'"] = {
-    url: "Practal theology.html",
+  subclasses["Practical Theology 'Subclass BV'"] = {
+    
     collection: []
   },
-  subclasses["Christain Denomination'Class BM'"] = {
-    url: "Christain Denomination.html",
-    collection: []
-  },
-
-
-
-subclasses["Social sciences(General) 'Subclass H'"] = {
-  url: "General social sciences.html",
+  subclasses["Christain Denomination 'SubClass BM'"] = {
   
-  collection: [ ]
+    collection: []
+  },
+
+
+
+subclasses["Social sciences(General) 'SubClass H'"] = {
+  
+  
+  collection: []
 },
 
-subclasses["Statistics 'Subclass HA"] = {
-  url: "Statistics.html",
+subclasses["Statistics 'SubClass HA"] = {
 
   collection: []
 },
 subclasses["Economic theory. Demography 'Subclass HB'"] = {
-  url: "Economic theory.html",
+  
   collection:[]
 },
-subclasses["Economic history and condition 'Subclass HC'"] = {
-  url: "Economic history.html",
+subclasses["Economic history and condition 'SubClass HC'"] = {
+  
   collection: []
 },
-subclasses["Industries Land use Labor 'Subclass HD '"] = {
-  url: "Industries.html",
+subclasses["Industries Land use Labor 'SubClass HD '"] = {
   collection: []
 },
-subclasses["Transportation and communications 'Subclass HE'"] = {
+subclasses["Transportation and communications 'SubClass HE'"] = {
     url: "Transportation.html",
     collection: []
   },
-  subclasses["Commerce'HF'"] = {
-    url: "Commerce.html",
+  subclasses["Commerce'SubClass HF'"] = {
+    
     collection: []
   },
-  subclasses["Finance 'Subclass HG'"] = {
-    url: "finance.html",
+  subclasses["Finance 'SubClass HG'"] = {
+    
     collection: []
   },
-  subclasses["Public Finance 'Subclass HJ'"] = {
-    url: "Public Finance.html",
+  subclasses["Public Finance 'SubClass HJ'"] = {
+  
     collection: []
   },
-  subclasses["Sociology (general) 'Subclass HM'"] = {
-    url: "Sociology.html",
+  subclasses["Sociology (general) 'SubClass HM'"] = {
+    
     collection: []
   },
-  subclasses[" Social history and conditions. Social problems. Social reform'Subclass HN'"] = {
-    url: "social history.html",
+  subclasses[" Social history and conditions. Social problems. Social reform 'SubClass HN'"] = {
+    
     collection: []
   },
-  subclasses["The family. Marriage. Women and Sexuality 'Subclass HQ '"] = {
-    url: "The family.html",
+  subclasses["The family. Marriage. Women and Sexuality 'SubClass HQ '"] = {
+    
     collection: []
   },
   subclasses["Society secret, benevolent 'Subclass HS'"] = {
-    url: "Society secret.html",
+    
     collection: []
   },
-  subclasses["Communities. Classes. Races'HF'"] = {
-    url: "Communities.html",
+  subclasses["Communities. Classes. Races' SubClass HF'"] = {
+    
     collection: []
   },
-  subclasses["Social patholgy. Social and public welfare. Criminology 'Subclass HV'"] = {
-    url: " patholgy.html",
+  subclasses["Social patholgy. Social and public welfare. Criminology 'SubClass HV'"] = {
+    
     collection: []
   },
-  subclasses["Socialism. communism. Anarchism'HX'"] = {
-    url: "Socialism. communism.html",
+  subclasses["Socialism. communism. Anarchism 'SubClass HX'"] = {
+    
     collection: []
   },
 
 
-  subclasses["Philology. Linguistics 'Subclass P' "] = {
-    url: "Philology.html",
+  subclasses["Philology. Linguistics 'SubClass P' "] = {
+    
     collection: []
   },
-  subclasses["Greek language and literature. Latin language and literature'Subclass PA"] = {
-    url: "Greek language.html",
+  subclasses["Greek language and literature. Latin language and literature 'SubClass PA'"] = {
+    
     collection: []
   },
-  subclasses["English language'Subclass PE"] = {
-    url: "English.html",
+  subclasses["English language 'SubClass PE"] = {
+    
     collection: []
   },
-  subclasses["Literature(General) 'Subclass PN'"] = {
-    url: "General literature.html",
-    collection: [      {
+  subclasses["Literature(General) 'SubClass PN'"] = {
+    
+    collection: [    
+        {
       Author: "SEGUN BAKARE", Title: "basics of broadcasting : A manual on radio and television techniques in nigeria", isbn:"978-o67-039-4",
       Year_of_Publication: "2005", Place_of_Publication: "palms publications", Number_of_Title: "1", Class_Number: "PN 1990.83.B166 2005", Edition: ""
     },
@@ -177,19 +171,24 @@ subclasses["Transportation and communications 'Subclass HE'"] = {
 ]
   },
 
-  subclasses["English literature 'Subclass PR'"] = {
-    url: "English literature.html",
+  subclasses["English literature 'SubClass PR'"] = {
+    
     collection: []
   },
-  subclasses["American Literature 'Subclass PS '"] = {
-    url: "American Literature.html",
+  subclasses["American Literature 'SubClass PS '"] = {
+    
     collection: []
   },
-  subclasses["Fictions and juvenile belles lellres'Subclass PZ' "] = {
-    url: "Fictions and juvenile.html",
+  subclasses["Fictions and juvenile belles lellres'SubClass PZ' "] = {
+    
     collection: []
   },
   subclasses[""] = {
-    url: ".html",
+    
     collection: []
   }
+
+
+
+
+  

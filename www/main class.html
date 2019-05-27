@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>library collections</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../www/css/nav bar.css">
     <link rel="stylesheet" type="text/css" media="screen" href="../www/css/library books.css" />
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -14,7 +15,25 @@
 </head>
 
 <body>
+    <nav>
+        <ul>
+          <li>
+              <a href="christopher.html">Home</a>
+          </li>
+          <li>
+              <a href="unichris library.html">Library</a>
+          </li>
+          <li>
+              <a href="main class.html">Collections</a>
+          </li>
+          <li>
+              <a href="developer.html"> Developer</a>
+          </li>
+        </ul>
+      </nav>
 
+
+<div id ="container">
 
     <h1 id="our-headline">library collection</h1> <br>
     <p class="para1">Christopher university library is a holding of collection of books and non materials . It's for
@@ -25,31 +44,15 @@
     <p> <a href="reference books.html"><button> reference books</button></a> <a
             href="fictions.html"><button>fictions</button></a> <a href="non-fiction"><button>non-fiction</button></a> <a
             href="journals.html"><button>journals</button></a></p>
-<<<<<<< HEAD
 
     <ol id="our-listItem">
 
     </ol>
-=======
-
-    <input type="text" id="myInput" title="search collections" onkeyup="myFunction()" placeholder="search for names.."
-        title="Type in a name" />
-
-    <ol id="our-listItem">
-
-    </ol>
-
-
-
-
-    <input type="text" id="newItem"><br>
->>>>>>> 71a8b4807604d7e6dc67fa63845a8d056a22e4e8
 
     <script type="text/javascript" src="../www/js/main class.js"></script>
     <script type="text/javascript" src="../www/js/classesCatalog.js"></script>
     <script>
 
-<<<<<<< HEAD
         // console.log("hello");
         var extractedFormValue = decodeURIComponent(window.location.search);
         extractedFormValue = extractedFormValue.substring(1);
@@ -91,67 +94,14 @@
                 orderedMainClassList.appendChild(liElement)
             });
         }
-console.log(mainClasses)
+
 // alert(mainClasses["literature and language"]) extracting the sub the array inside the value key
         loadMainClassFor(extractedFormValue);
 
         
 
     </script>
-    <a href="unichris library.html"><h3 style="float:left"><capitalize><button> Nelson Mandela Library</button></capitalize></h3></a>   
-     <a href="christopher.html"><h3 style="float:left"><capitalize><button>Back to home</button></capitalize></h3></a>
-
-=======
-    <script type="text/javascript" src="../www/js/main class.js"></script>
-    <script type="text/javascript" src="../www/js/classesCatalog.js"></script>
-    <script>
-
-        // console.log("hello");
-        var extractedFormValue = decodeURIComponent(window.location.search);
-        extractedFormValue = extractedFormValue.substring(1);
-        // var queries = extractedFormValue.split("&");
-        // for (var i = 0; i < queries.length; i++) {
-        //     document.write(queries[i] + "<br>");
-        // }
-
-        loadMainClassFor = (formValue) => {
-            let mainClassMapToRender = [];
-            const mainClassValues = mainClasses[formValue];
-
-            if (mainClassValues == null) {
-                //main class not found
-                mainClassMapToRender = { ...mainClasses } //javascript spread
-            } else {
-                mainClassMapToRender[formValue] = mainClassValues
-            }
-
-            renderMainClass(mainClassMapToRender);
-        }
-
-        renderMainClass = (mainClassesMapForRendering) => {
-            const orderedMainClassList = document.getElementById("our-listItem");
-            Object.keys(mainClassesMapForRendering).map((mainClass) => {
-                const liElement = document.createElement("li");
-                const aElement = document.createElement("a");
-                aElement.setAttribute("href", "subclass.html?mainclass=" + mainClass);
-                aElement.innerText = mainClass;
-
-                liElement.appendChild(aElement);
-
-                orderedMainClassList.appendChild(liElement)
-            });
-        }
-
-
-        loadMainClassFor(extractedFormValue);
-// alert(mainClasses["literature and language"])</script>
-
-    <a href="christopher.html">
-        <h3>
-            <capitalize><button>home</button></capitalize>
-        </h3>
-    </a></p>
->>>>>>> 71a8b4807604d7e6dc67fa63845a8d056a22e4e8
+   
 
 </body>
 

@@ -1,4 +1,4 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -37,30 +37,24 @@
     
     <img name="pic" src="../www/library image/shelve images3.png"  alt="" width="100%" height="300px"  />
     <!----img src="../www/library image/logo library.jpg" alt="../www/library image" width="100%" height="150px"-->
+    <div id="number of books">
+        
+    </div>
     
-    <div id="cont"></div>
     <script type="text/javascript" src="../www/js/book collections.js"></script>
-
-   
-    <a href="unichris library.html">
-        <h3 style="float:left">
-            <capitalize><button> Nelson Mandela Library</button></capitalize>
-        </h3>
-    </a>
-    <a href="main class.html">
-        <h3 style="float:left">
-            <capitalize><button>Main class collections</button></capitalize>
-        </h3>
-    </a>
-    <a href="christopher.html">
-        <h3 style="float:left">
-            <capitalize><button>Back to home</button></capitalize>
-        </h3>
-    </a>
-
-    <table>
-    
+<div class="small-container">
+    <form>
+            <input type="text" name="addList" id="item" placeholder="New_Items" required />
+        </form>
+        
+    <h2>Items</h2>
+    <table id="table">
+    <tr>
+        
+    </tr>
     </table>
+    <button> clear list</button>
+</div>
     <script>
         
           //creating date object
@@ -111,40 +105,118 @@
             if (typeof subClass == 'undefined') {
                 alert("Books no longer in collection");
             } else {
-                collectionMapToRender[subclassName] = subClass
+                collectionMapToRender[subclassName] = subClass //Unnecessary as it was not used
+                renderSubClass(subClass);     
                 
             }
-            renderSubClass(subClass);
+         
         }
         
-        renderSubClass = (collections) => {
-            // SIMPLY ADD OR REMOVE VALUES IN THE ARRAY FOR TABLE HEADERS.
+       
+        renderSubClass = (aSubClass) => { 
+            //aSubClass here is an object pointing to subclass and has this structure { collection: [books(objects)]}. the books needs to be extracted
+        // and looped through    
+        // SIMPLY ADD OR REMOVE VALUES IN THE ARRAY FOR TABLE HEADERS.
  // FIRST CREATE A TABLE STRUCTURE BY ADDING A FEW HEADERS AND
     // ADD THE TABLE TO YOUR WEB PAGE.
-    function generateTableHead(table, data){
-        let thead = table.createTHead();
-        let row = thead.insertRow();
-        for (let key of data){
-            let th = document.createElement("th");
-            let text = document.createTextNode(key);
-            th.appendChild(text);
-            row.appendChild(th);
-        }
+   
+    function generateTableHead( table,tableHead){
+        table.setAttribute('border', '8')
+        tableHead.map((subclassKey) =>{
+            thead = document.createElement('thead');
+            const keys = Object.keys(subclassKey);
+            keys.map((aKey) => {
+                const th = document.createElement('th')
+                th.innerText = aKey;
+                thead.appendChild(th);
+                
+            })
+        })
+        table.appendChild(thead)
     }
-    function generateTable(table,data){
-        for (let element of data) {
-            let row = table.insertRow();
-            for (key in element){
-                let cell = row.insertCell();
-                let text = document.createTextNode(element[key]);
-                console.log(element[key])
-                cell.appendChild(text);
-            }
-        }
+    
+    
+    
+    function generateTableRows(table,data){
+        // see information on map function applied to an array - https://www.w3schools.com/jsref/jsref_map.asp - I am using it 
+        // here to access the elements of the array for use. I ignore the returned array, notice I did not assign the result of the map to a variable
+        //First loop - looping tru book objects
+        data.map((aBookObject) => {
+            const tr = document.createElement("tr")  //tr for the entire fields of a book object which corresponds to our columns - one book, one tr and many tds
+            //Extract all field values in the book object
+            //Objects.values returns an array of all values of the fields/keys in the passed objects, in this case aBookObject, so now I have an array to call map function
+            //See info on what is an object https://www.w3schools.com/js/js_objects.asp
+            //See info on Objects class https://javascript.info/keys-values-entries
+            
+            const fieldValues = Object.values(aBookObject)  // this line is not necessay just for readability for you. I could have called map directly like this - Object.values(aBookObject).map((aFieldValue) => {})
+            
+            //Second loop - looping through values of fields( each value will be sed to create a column) in a book
+            fieldValues.map((aFieldValue) => {   //each field needs a td
+                const td = document.createElement("td")
+                td.innerText = aFieldValue
+                tr.appendChild(td)
+                
+            })
+            document.getElementById('number of books').innerHTML = 'Number Of Collections is :' + " " + data.length;
+            //By now, the tr has as many td as the fields in the bookObject e.g. Author, year etc
+            table.appendChild(tr)
+        })
     }
     let table = document.querySelector("table");
-    let data = Object.keys(collections);
+    // let data = Object.keys(aBookObject); //guess work
+    let data = aSubClass["collection"] //a way to retrive fields in objects - We now have an array of [books(objects)] ready to be looped
+    // generateTableHead(table, data)
+    
+    generateTableRows(table, data)
     generateTableHead(table, data)
-    generateTable(table, collections)
-        }   
-   loadSubClassesFor(expectedSubClass)
+    // generateTable(table, aSubClass )
+}   
+loadSubClassesFor(expectedSubClass)
+//local storage
+const form = document.querySelector('form')
+const table = document.getElementById('table')
+const button = document.querySelector('button')
+const input = document.getElementById('item')
+const tr = document.createElement('tr')
+let itemsArray = localStorage.getItem('items') ? JSON.parse(localStorage.getItem('items')) : []
+
+localStorage.setItem('items', JSON.stringify(itemsArray))
+const data = JSON.parse(localStorage.getItem('items'))
+
+const tdMaker = text => {
+    const td = document.createElement('td')
+  td.textContent = text
+  tr.appendChild(td)
+//data.appendChild()
+}
+
+console.log(table)
+form.addEventListener('submit', function(e) {
+    e.preventDefault()
+
+  itemsArray.push(input.value)
+  localStorage.setItem('items', JSON.stringify(itemsArray))
+  tdMaker(input.value)
+  input.value = ''
+})
+
+data.forEach(item => {
+    tdMaker(item)
+})
+
+button.addEventListener('click', function() {
+  localStorage.clear()
+  while (table.firstChild) {
+    table.removeChild(table.firstChild)
+  }
+})
+/*
+//to remove items 
+localStorage.removeItem('favoriteflavor');
+ // dynamically creat table (its html)
+*/
+   
+</script>
+
+</body>
+</html>
