@@ -18,8 +18,6 @@
 .firstTree{float:left; text-align: center};
 .secondTree{float:left ; text-align: center};
 .clearTrees{clear:both};
-.button{ background-color: rgb(61, 42, 165)};
-.container{float:right};
     </style>
      <!--script src="../www/js/creatBook.js"></script-->
     <link rel="stylesheet" href="../www/css/nav bar.css">
@@ -53,7 +51,7 @@
     
     <script type="text/javascript" src="../www/js/book collections.js"></script>
    
-    <h1 align="center">Nelson Library Mandela: Create a new book record</h1>
+    <h1 align="center">Nelson Library Mandela Library: Create a new book record</h1>
   <div class="container">
     <form id="Book" align="center" action="javascript:;">
       <div class="firstTree">
@@ -64,7 +62,7 @@
 </div>
     <div class="secondTree">
     <label>PLACE_OF_PUBLICATION  :<input name="Place_of_Publication" id="Place_of_Publication " required/></label><br><br>
-    <label>Number_of_Title  :<input name="Number_of_Title" id="Number_of_Title" required/></label><br><br>
+    <label>NUMBER_OF_TITLE  :<input name="Number_of_Title" id="Number_of_Title" required/></label><br><br>
     <label>CLASS NUMBER  :<input name="Class_Number" id="Class_Number" required/></label><br><br>
     <label> EDITION  :<input name="Edition" id="Edition" required/></label><br>
 </div>
@@ -74,13 +72,13 @@
     <button onclick="addTableRow()">Add Books</button>  
     <button onclick="editTableRow()">Edit Books</button>  
     <button onclick="removeRowTable()">Remove Books</button> 
-    <button id="number of books">check count</button>
+    <button id="number of books">Look out for books count count</button>
  
 </div>
   </form>  
 </div>
         
-   <h2>Items</h2>
+   <h2>bOOK COLLECTIONS</h2>
             <table id="table"></table>
             
 <script>
@@ -209,7 +207,7 @@ var rIndex,
 table = document.getElementById('table');
 
 function addTableRow(){
-    //defining form
+//creating table tags
     var newRow = table.insertRow(table.length),
     cell1 = newRow.insertCell(0),
     cell2 = newRow.insertCell(1),
@@ -219,7 +217,7 @@ function addTableRow(){
     cell6 = newRow.insertCell(5),
     cell7 = newRow.insertCell(6),
     cell8 = newRow.insertCell(7),
-    //var form = document.forms.Book.value;
+    //defining form
     Author = document.forms.Book.Author.value,
     Title = document.forms.Book.Title.value,
     Isbn = document.forms.Book.Isbn.value,
@@ -238,7 +236,7 @@ function addTableRow(){
    if(Number_of_Title == ""){alert("please fill in Number_of_Title box")};
    if(Class_Number == ""){alert("please fill in Class_Number box")};
    if(Edition == ""){alert("please fill in Edition box")};
-   
+//appending form values to the table cell    
    cell1.innerHTML = Author,
    cell2.innerHTML = Title,
    cell3.innerHTML = Isbn,
@@ -250,25 +248,26 @@ function addTableRow(){
    //initialize form input
    var input = {};
    input = {Author,Title,Isbn,Year_of_Publication,Place_of_Publication,Number_of_Title,Class_Number,Edition}
-   
+   //convertingRowObject2Array
    var books = new Array(input)
-   console.log(input)
+   console.log(books)
    selectionRowToInput();
 }
-//adding a click event to the table to look out for rows edit or remove
+//adding a click event to the table to look out for rows add, edit or remove
 function selectionRowToInput(){
-    var table = document.getElementById('table')
-    for(var i = 0; i < table.rows.length; i++)
+    var table = document.getElementById('table')//getting table id
+    for(var i = 0; i < table.rows.length; i++)//looping through table
     {
         
-        document.getElementById('number of books').innerHTML = 'Number Of Collections is :' + " " + table.rows.length;
+        document.getElementById('number of books').innerHTML = 'Number Of Collections is :' + " " + table.rows.length;//getting the row count of the table
 
         console.log(table.rows.length)
         table.rows[i].onclick = function()
         {
             rIndex = this.rowIndex;
             console.log(rIndex)
- document.forms.Book.Author.value = this.cells[0].innerHTML;
+           // console.log(rIndex)
+ document.forms.Book.Author.value = this.cells[0].innerHTML;// getting click of the table rows to append back to user input box
 document.forms.Book.Title.value = this.cells[1].innerHTML;
 document.forms.Book.Isbn.value = this.cells[2].innerHTML;
 document.forms.Book.Year_of_Publication.value = this.cells[3].innerHTML;
@@ -280,11 +279,11 @@ document.forms.Book.Edition.value = this.cells[7].innerHTML;
 };
   };
 };
-selectionRowToInput();
-
+selectionRowToInput();//call back function
+//edit function
 function editTableRow()
 {
- var Author = document.forms.Book.Author.value,
+ var Author = document.forms.Book.Author.value, //getting the values of input
  Title = document.forms.Book.Title.value,
  Isbn = document.forms.Book.Isbn.value,
  Year_of_Publication = document.forms.Book.Year_of_Publication.value,
@@ -293,7 +292,7 @@ function editTableRow()
  Class_Number = document.forms.Book.Class_Number.value,
  Edition = document.forms.Book.Edition.value;
 
- table.rows[rIndex].cells[0].innerHTML = Author;
+ table.rows[rIndex].cells[0].innerHTML = Author;//initializing of input values back to the table
  table.rows[rIndex].cells[1].innerHTML = Title;
  table.rows[rIndex].cells[2].innerHTML = Isbn;
  table.rows[rIndex].cells[3].innerHTML = Year_of_Publication;
@@ -303,9 +302,10 @@ function editTableRow()
  table.rows[rIndex].cells[7].innerHTML = Edition;
  
 }
+// removeRows that is been clicked 
 function removeRowTable()
 {
-    table.deleteRow(rIndex);
+    table.deleteRow(rIndex);//initializing the delete function to the table
     //clear input text
 document.forms.Book.Author.value = '';
 document.forms.Book.Title.value = '';
