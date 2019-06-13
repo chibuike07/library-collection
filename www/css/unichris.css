@@ -99,4 +99,6 @@ padding-inline-start: 40px;
 padding-top: 10px;
 padding-right: 60px;
 }
+form{text-align: center}
+
 @media only screen and (max-width:800px){}

@@ -15,5 +15,44 @@ img{
 float: right;
 margin: 10px;
 padding: 5px solid;
+
+#sideArea{
+    float:left;
+    width: 100px;
+    height: 250px;
+  }
+  
+  body {font-family: "Lato", sans-serif;}
+          
+          .tablink {
+            background-color: #555;
+            color: white;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            font-size: 17px;
+            width: 25%;
+          }
+          
+          .tablink:hover {
+            background-color: #777;
+          }
+          
+          /* Style the tab content */
+          .tabcontent {
+            color: white;
+            display: none;
+            padding: 50px;
+            text-align: center;
+          }
+          
+          #Librarian {background-color:red;}
+          #Departments {background-color:green;}
+          #Holdings {background-color:blue;}
+          #Directions {background-color:orange;}
+          #LendingProcedures{background-color: indigo}
+  
 }
 @media screen and (max-width:800px){}
