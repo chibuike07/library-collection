@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
     
@@ -323,4 +324,327 @@ document.forms.Book.Edition.value = '';
 }
 </script>
 </body>
+=======
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <Title>Book collections</Title>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+        <style>
+        body {
+            background-color: darkolivegreen;
+        }
+    tr{transition:all .25s ease-in-out}
+    tr:hover{background-color:#eee;}
+    
+.firstTree{float:left; text-align: center};
+.secondTree{float:left ; text-align: center};
+.clearTrees{clear:both};
+    </style>
+     <!--script src="../www/js/creatBook.js"></script-->
+    <link rel="stylesheet" href="../www/css/nav bar.css">
+    
+ 
+</head>
+
+<body>
+
+        <nav>
+                <ul>
+                  <li>
+                      <a href="christopher.html">Home</a>
+                  </li>
+                  <li>
+                      <a href="unichris library.html">Library</a>
+                  </li>
+                  <li>
+                      <a href="main class.html">Collections</a>
+                  </li>
+                  <li>
+                      <a href="developer.html"> Developer</a>
+                  </li>
+                </ul>
+              </nav>
+    
+    <img name="pic" src="../www/library image/shelve images3.png"  alt="" width="100%" height="300px"  />
+    <!----img src="../www/library image/logo library.jpg" alt="../www/library image" width="100%" height="150px"-->
+    <div id="good"></div>
+    <div id="goods"></div>
+    
+    <script type="text/javascript" src="../www/js/book collections.js"></script>
+   
+    <h1 align="center">Nelson Library Mandela Library: Create a new book record</h1>
+  <div class="container">
+    <form id="Book" align="center" action="javascript:;">
+      <div class="firstTree">
+    <label>AUTHOR  :<input name="Author" id="Author" required/></label><br><br>
+    <label>TITLE  :<input name="Title" id="Title" required/></label><br><br>
+    <label>ISBN  :<input name="Isbn" id="Isbn" required/></label><br><br>
+    <label>YEAR_OF_PUBLICATION  :<input name="Year_of_Publication" id="Year_of_Publication" required/></label><br><br>
+</div>
+    <div class="secondTree">
+    <label>PLACE_OF_PUBLICATION  :<input name="Place_of_Publication" id="Place_of_Publication " required/></label><br><br>
+    <label>NUMBER_OF_TITLE  :<input name="Number_of_Title" id="Number_of_Title" required/></label><br><br>
+    <label>CLASS NUMBER  :<input name="Class_Number" id="Class_Number" required/></label><br><br>
+    <label> EDITION  :<input name="Edition" id="Edition" required/></label><br>
+</div>
+<div class="clear"></div><br><br>
+
+<div class="button">
+    <button onclick="addTableRow()">Add Books</button>  
+    <button onclick="editTableRow()">Edit Books</button>  
+    <button onclick="removeRowTable()">Remove Books</button> 
+    <button id="number of books">Look out for books count count</button>
+ 
+</div>
+  </form>  
+</div>
+        
+   <h2>bOOK COLLECTIONS</h2>
+            <table id="table"></table>
+            
+<script>
+        //creating date object
+        var now = new Date();
+        //extracting the time info. 
+        var sec = now.getSeconds();
+        var mn = now.getMinutes();
+        var hh = now.getHours();
+        //var ms = now.getMilliseconds();
+        // setting default greeting
+        var hi = "Good Morning"
+        // seting welcome note if after 11 pm
+        
+        if (hh > 11) hi = "Good Afernoon"
+        //seting welcome note if after 17 pm
+        
+        if (hh > 17) hi = "Good Evening"
+        //displaying the welcome note withthe present time nd month
+        var tim = hi + "\n";
+        tim += "Hours:" + hh + "\n";
+        tim += " Minutes:" + mn + "\n";
+        tim += "seconds:" + sec + "\n";
+        alert(tim);
+    //making the slide show to rotate every 3 seconds
+    var pause = 3000;
+    var n = 0;
+    var imgs = new Array("../www/library image/shelve images3.png", "../www/library image/shelve image2.jpg", "../www/library image/tenor.gif");
+    var preload = new Array();
+    for (var i = 1; i < imgs.length; i++) {
+        preload[i] = new Image();
+        preload[i].src = imgs
+    }
+    function rotate() {
+        document.images.pic.src = imgs[n];
+        (n == (imgs.length - 1)) ? n = 0 : n++
+        setTimeout("rotate()", pause);// the time to which to slide show stops and if it stops start 
+    }
+    rotate();
+    let expectedSubClass = decodeURIComponent(window.location.search);
+    expectedSubClass = expectedSubClass.substring(1);
+    expectedSubClass = expectedSubClass.split("=")[1];
+    loadSubClassesFor = (subclassName) => {
+        let collectionMapToRender = [];
+            
+            const subClass = subclasses[subclassName];
+            
+            if (typeof subClass == 'undefined') {
+                alert("Books no longer in collection");
+            } else {
+                collectionMapToRender[subclassName] = subClass //Unnecessary as it was not used
+                renderSubClass(subClass);     
+                
+            }
+            
+        }
+        
+        
+        renderSubClass = (aSubClass) => { 
+            //aSubClass here is an object pointing to subclass and has this structure { collection: [books(objects)]}. the books needs to be extracted
+            // and looped through    
+            // SIMPLY ADD OR REMOVE VALUES IN THE ARRAY FOR TABLE HEADERS.
+            // FIRST CREATE A TABLE STRUCTURE BY ADDING A FEW HEADERS AND
+            // ADD THE TABLE TO YOUR WEB PAGE.
+            
+            function generateTableHead( table,tableHead){
+                table.setAttribute('border', '8')
+                tableHead.map((subclassKey) =>{
+                    thead = document.createElement('thead');
+            const keys = Object.keys(subclassKey);
+            keys.map((aKey) => {
+                const th = document.createElement('th')
+                th.setAttribute('id', 'headers')
+                th.innerText = aKey;
+                thead.appendChild(th);
+                
+            })
+        })
+        table.appendChild(thead)
+    }
+    
+    
+    
+    function generateTableRows(table,data){
+        // see information on map function applied to an array - https://www.w3schools.com/jsref/jsref_map.asp - I am using it 
+        // here to access the elements of the array for use. I ignore the returned array, notice I did not assign the result of the map to a variable
+        //First loop - looping tru book objects
+        data.map((aBookObject) => {
+            const tr = document.createElement("tr")  //tr for the entire fields of a book object which corresponds to our columns - one book, one tr and many tds
+            tr.setAttribute('id', 'tableRow')
+            //Extract all field values in the book object
+            //Objects.values returns an array of all values of the fields/keys in the passed objects, in this case aBookObject, so now I have an array to call map function
+            //See info on what is an object https://www.w3schools.com/js/js_objects.asp
+            //See info on Objects class https://javascript.info/keys-values-entries
+            
+            const fieldValues = Object.values(aBookObject)  // this line is not necessay just for readability for you. I could have called map directly like this - Object.values(aBookObject).map((aFieldValue) => {})
+            
+            //Second loop - looping through values of fields( each value will be sed to create a column) in a book
+            fieldValues.map((aFieldValue) => {   //each field needs a td
+                const td = document.createElement("td");
+                td.setAttribute('id', 'tableDefinition')
+                td.innerText = aFieldValue
+                tr.appendChild(td)
+            })
+            //By now, the tr has as many td as the fields in the bookObject e.g. Author, year etc
+            table.appendChild(tr)
+        })
+    }
+    
+
+    let table = document.querySelector("table");
+    // let data = Object.keys(aBookObject); //guess work
+    let data = aSubClass["collection"] //a way to retrive fields in objects - We now have an array of [books(objects)] ready to be looped
+    // generateTableHead(table, data)
+    
+
+ // console.log(localStorage['booksCollections'])
+ //document.getElementById('goods').innerHTML = localStorage['booksCollections']
+    
+ generateTableRows(table, data)
+ generateTableHead(table, data)
+    // generateTable(table, aSubClass )
+}   
+loadSubClassesFor(expectedSubClass);
+var rIndex,
+table = document.getElementById('table');
+
+function addTableRow(){
+//creating table tags
+    var newRow = table.insertRow(table.length),
+    cell1 = newRow.insertCell(0),
+    cell2 = newRow.insertCell(1),
+    cell3 = newRow.insertCell(2),
+    cell4 = newRow.insertCell(3),
+    cell5 = newRow.insertCell(4),
+    cell6 = newRow.insertCell(5),
+    cell7 = newRow.insertCell(6),
+    cell8 = newRow.insertCell(7),
+    //defining form
+    Author = document.forms.Book.Author.value,
+    Title = document.forms.Book.Title.value,
+    Isbn = document.forms.Book.Isbn.value,
+    Year_of_Publication = document.forms.Book.Year_of_Publication.value,
+    Place_of_Publication = document.forms.Book.Place_of_Publication.value,
+    Number_of_Title = document.forms.Book.Number_of_Title.value,
+    Class_Number = document.forms.Book.Class_Number.value,
+    Edition = document.forms.Book.Edition.value;
+    
+    //validation of form
+    if(Author == ""){alert("please fill in Author box")};
+   if(Title == ""){alert("please fill in Title box")};
+   if(Isbn == ""){alert("please fill in Isbn box")};
+   if(Year_of_Publication == ""){alert("please fill in Year_of_Publication box")};
+   if(Place_of_Publication == ""){alert("please fill in Place_of_Publication box")};
+   if(Number_of_Title == ""){alert("please fill in Number_of_Title box")};
+   if(Class_Number == ""){alert("please fill in Class_Number box")};
+   if(Edition == ""){alert("please fill in Edition box")};
+//appending form values to the table cell    
+   cell1.innerHTML = Author,
+   cell2.innerHTML = Title,
+   cell3.innerHTML = Isbn,
+   cell4.innerHTML = Year_of_Publication,
+   cell5.innerHTML = Place_of_Publication,
+   cell6.innerHTML = Number_of_Title,
+   cell7.innerHTML = Class_Number,
+   cell8.innerHTML = Edition;
+   //initialize form input
+   var input = {};
+   input = {Author,Title,Isbn,Year_of_Publication,Place_of_Publication,Number_of_Title,Class_Number,Edition}
+   //convertingRowObject2Array
+   var books = new Array(input)
+   console.log(books)
+   selectionRowToInput();
+}
+//adding a click event to the table to look out for rows add, edit or remove
+function selectionRowToInput(){
+    var table = document.getElementById('table')//getting table id
+    for(var i = 0; i < table.rows.length; i++)//looping through table
+    {
+        
+        document.getElementById('number of books').innerHTML = 'Number Of Collections is :' + " " + table.rows.length;//getting the row count of the table
+
+        console.log(table.rows.length)
+        table.rows[i].onclick = function()
+        {
+            rIndex = this.rowIndex;
+            console.log(rIndex)
+           // console.log(rIndex)
+ document.forms.Book.Author.value = this.cells[0].innerHTML;// getting click of the table rows to append back to user input box
+document.forms.Book.Title.value = this.cells[1].innerHTML;
+document.forms.Book.Isbn.value = this.cells[2].innerHTML;
+document.forms.Book.Year_of_Publication.value = this.cells[3].innerHTML;
+document.forms.Book.Place_of_Publication.value = this.cells[4].innerHTML;
+document.forms.Book.Number_of_Title.value = this.cells[5].innerHTML;
+document.forms.Book.Class_Number.value = this.cells[6].innerHTML;
+document.forms.Book.Edition.value = this.cells[7].innerHTML;
+ 
+};
+  };
+};
+selectionRowToInput();//call back function
+//edit function
+function editTableRow()
+{
+ var Author = document.forms.Book.Author.value, //getting the values of input
+ Title = document.forms.Book.Title.value,
+ Isbn = document.forms.Book.Isbn.value,
+ Year_of_Publication = document.forms.Book.Year_of_Publication.value,
+ Place_of_Publication = document.forms.Book.Place_of_Publication.value,
+ Number_of_Title = document.forms.Book.Number_of_Title.value,
+ Class_Number = document.forms.Book.Class_Number.value,
+ Edition = document.forms.Book.Edition.value;
+
+ table.rows[rIndex].cells[0].innerHTML = Author;//initializing of input values back to the table
+ table.rows[rIndex].cells[1].innerHTML = Title;
+ table.rows[rIndex].cells[2].innerHTML = Isbn;
+ table.rows[rIndex].cells[3].innerHTML = Year_of_Publication;
+ table.rows[rIndex].cells[4].innerHTML = Place_of_Publication;
+ table.rows[rIndex].cells[5].innerHTML = Number_of_Title;
+ table.rows[rIndex].cells[6].innerHTML = Class_Number;
+ table.rows[rIndex].cells[7].innerHTML = Edition;
+ 
+}
+// removeRows that is been clicked 
+function removeRowTable()
+{
+    table.deleteRow(rIndex);//initializing the delete function to the table
+    //clear input text
+document.forms.Book.Author.value = '';
+document.forms.Book.Title.value = '';
+document.forms.Book.Isbn.value = '';
+document.forms.Book.Year_of_Publication.value = '';
+document.forms.Book.Place_of_Publication.value = '';
+document.forms.Book.Number_of_Title.value = '';
+document.forms.Book.Class_Number.value = '';
+document.forms.Book.Edition.value = '';
+ 
+}
+</script>
+</body>
+>>>>>>> fe6e7cbe5fb17afb46c17728471cd88c5e1d1585
 </html>  

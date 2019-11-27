@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 h1,h2,h4{
     color:#ff0000;
     text-align: center;
@@ -53,4 +54,62 @@ body {font-family: "Lato", sans-serif;}
         #Holdings {background-color:blue;}
         #Directions {background-color:orange;}
         #LendingProcedures{background-color: indigo}
+=======
+h1,h2,h4{
+    color:#ff0000;
+    text-align: center;
+
+}
+body{
+    background-color: rgb(226, 221, 142);
+    color: #000000;
+}
+
+
+img{
+    width:50%;
+    height: 750px;
+float: right;
+margin: 10px;
+padding: 5px solid;
+}
+#sideArea{
+    float:left;
+    width: 100px;
+    height: 250px;
+  }
+  
+  body {font-family: "Lato", sans-serif;}
+          
+          .tablink {
+            background-color: #555;
+            color: white;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            font-size: 17px;
+            width: 25%;
+          }
+          
+          .tablink:hover {
+            background-color: #777;
+          }
+          
+          /* Style the tab content */
+          .tabcontent {
+            color: white;
+            display: none;
+            padding: 50px;
+            text-align: center;
+          }
+          
+          #Librarian {background-color:red;}
+          #Departments {background-color:green;}
+          #Holdings {background-color:blue;}
+          #Directions {background-color:orange;}
+          #LendingProcedures{background-color: indigo}
+  
+>>>>>>> fe6e7cbe5fb17afb46c17728471cd88c5e1d1585
 @media screen and (max-width:800px){}

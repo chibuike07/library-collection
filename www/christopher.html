@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html>
 <head>
@@ -154,4 +155,173 @@ window.location.href = "main class.html?" + formValue;
 
 </script>
 </body>
+=======
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>christopher uni.</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../www/css/nav bar.css">
+    <link rel="stylesheet" href="../www/css/unichris.css">
+    <script
+  src="https://code.jquery.com/jquery-3.4.0.js"
+  integrity="sha256-DYZMCC8HTC+QDr5QNaIcfR7VSPtcISykd+6eSmBW5qo="
+  crossorigin="anonymous"></script>
+
+</head>
+<body >
+    <h1>WELCOME TO CHRISTOPHER UNIVERSITY</h1>
+        <nav>
+            <ul>
+              <li>
+                  <a href="christopher.html">Home</a>
+              </li>
+              <li>
+                  <a href="unichris library.html">Library</a>
+              </li>
+              <li>
+                  <a href="main class.html">Collections</a>
+              </li>
+              <li>
+                  <a href="developer.html"> Developer</a>
+              </li>
+            </ul>
+          </nav>
+
+    
+    <div id ="container">
+    <button onmouseout="clearDate()" onmouseover="showDate()" onload="showDate()">view & hide date </button>
+    <hi id="time"></hi>
+    </div>
+        <div class="headerArea">
+                <h1  style ="text-align:center"> <b style=" color:blue"> <b style="border-bottom:2px solid darkkhaki">CHRISTOPHER UNIVERSITY</b></b></h1>
+                <p style="text-align:center"> km.34, Lagos-Ibadan Expressway.<br>
+                    P.M.B 3008, RCCG Post Office, Mowe, Ogun State.<br>
+                   </p>
+                   
+                </div>
+            
+    
+
+    
+<div class="form">
+    <form role="search" class="search-form" action="javascript:;" onsubmit="loadClasses(this)"> 
+        <label>
+            <span class="screen-reader-text">Search for:</span>
+            <input type="search" class="search-field" placeholder="Search &hellip;" value="" name="s" />
+        </label>
+        <input type="submit" class="search-submit" value="Search" />
+    </form>
+</div>
+
+<br>
+    
+    <p > Christopher University Offers Admission Into The 
+   Joint University Preliminary Examination Boarrd (JUPEB)
+<br>Foundation Programme. </p>
+</div>
+     <p style="padding-left:35px">From <b>JUPEB Foundation</b> Programme to <br/>
+      <b>200 Level</b> Degree Programme.</p>
+      
+<div class="sideArea">
+     <p><b style="color:#ffffff" border="3px solid">2018/2019</b><br>
+       <b style="color:#ff0000">ADMISSION </b><br>
+    <strong style="color:#000"><small> INTO</small></strong> <br>
+    <b style="color:rgb(17, 17, 238)"> JUPEB FOUNDATION </b><br>
+    <strong style="color:#000"> PROGRAMMES</strong></p>
+    <img src="bgFoto.jpg" width="150px"   >
+    
+  </div><br><br><br>
+  
+    <p style="text-align:center" padding-top="15px">Interested Candidate must posses minimum <br>
+         of 5 credits relevant to the candidates desires<br>
+         course of study obtained at not more than<br>
+         2 sitting (inclyding English Language) <br>
+    </p>
+       </div>
+         <div class="left">
+                <nav>call :</nav>
+            </div>
+    <div class="com">  
+      <img src="../www/library image/sym_action_call.png" >
+    </div>
+       
+    <div  class="down">
+                   0903 775 7032 <br>
+                   0903 775 7033 <br>
+                   0903 775 7037 
+    </div>      
+    <div  class="up">
+            <p>For further information, visit <a href="www.christopheruniversity.edu.ng/jupeb">www.christopheruniversity.edu.ng/jupeb</a> <br>
+               <a href="Christopher University">Christopher University</a>  <br>
+                <a href="@ChristopherUni_">@ChristopherUni_</a> <br>
+               <a href="jupeb@christopheruniversity.edu.ng">jupeb@christopheruniversity.edu.ng</a> 
+                </p>
+     </div>
+    
+     
+   
+<script  type="text/javascript" src="../www/js/christo.js"></script>
+<script  type="text/javascript" src="../www/js/classesCatalog.js"></script>
+
+<script>
+
+function showDate(){
+    var time = document.getElementById("time");
+    time.innerHTML = Date();
+    };
+    
+    function clearDate(){
+    var time = document.getElementById("time");
+    time.innerHTML = '';
+    };
+    
+        
+    function showDate(){
+    var time = document.getElementById("time");
+    time.innerHTML = Date();
+    };
+    
+    function clearDate(){
+    var time = document.getElementById("time");
+    time.innerHTML = '';
+    };
+    
+    const loadClasses = (formObj) => {
+    console.log("got here")
+    const formValue = formObj.elements[0].value;
+    let foundCourse = mainClasses[formValue];
+    //$ ('#result').append(foundCourse ) 
+    //$('#value').append(formValue)
+   // console.log(foundCourse)
+    
+    //result.innerHTML = JSON.stringify(foundCourse)
+    //foundCourse.toString()
+    //document.getElementById("result").innerHTML = foundCourse
+    if (typeof foundCourse == 'undefined'){
+        console.log("nothing found")
+    }else{
+        //ToDo: pass the foung course to course-dsiplay.html
+       // window.location.href="course-display.html"
+    }
+    // data transfer to main class.html
+    var str = formValue;
+    var result = str.link("subclass.html ")
+    //var value = formValue;
+    //var mainclass = foundCourse;
+    var queryString = "?<h3>" + result + "</h3><br>" ;
+    //window.location.href = "main class.html" + queryString;//var mainclass = foundCourse;
+    var queryString = "?<h3>" + result + "</h3><br>" ;
+    window.location.href = "main class.html?" + formValue;
+    
+    
+    } 
+    
+</script>
+   
+   
+</body>
+>>>>>>> fe6e7cbe5fb17afb46c17728471cd88c5e1d1585
 </html>
