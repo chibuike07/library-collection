@@ -10,13 +10,17 @@
   src="https://code.jquery.com/jquery-3.4.0.js"
   integrity="sha256-DYZMCC8HTC+QDr5QNaIcfR7VSPtcISykd+6eSmBW5qo="
   crossorigin="anonymous"></script>
+<style>
 
+
+</style>
 </head>
-<body onload="showDate()">
-    
+<body >
+    <img src="../www/img/unichris logo.png" alt="img"  width="150px">
+
     
     <div id ="container">
-    <button onmouseout="clearDate()" onmouseover="showDate()">view $ hide date </button>
+    <button onmouseout="clearDate()" onmouseover="showDate()" onload="showDate()">view $ hide date </button>
     <hi id="time"></hi>
     </div>
         <div class="headerArea">
@@ -56,8 +60,9 @@
     <strong style="color:#000"><small> INTO</small></strong> <br>
     <b style="color:rgb(17, 17, 238)"> JUPEB FOUNDATION </b><br>
     <strong style="color:#000"> PROGRAMMES</strong></p>
-    <img src="bgFoto.jpg" width="150px"   >
-    
+    <div class="shelve">
+    <img src="../www/library image/shelve image2.jpg" width="400px" height="200px"   >
+</div>
   </div>
   <div class="left">
     <p>Interested Candidate must posses minimum <br>
@@ -84,8 +89,8 @@
                    0903 775 7033 <br>
                    0903 775 7037 
     </div><br><br><br>
-     <div class="joy">
-    <a href="author.html"><button >Meet the Developer</button> </a>
+     <div class="joy" text-align="center">
+    <a href="author.html"><button style="text-align: center">Meet the Developer</button> </a>
 </div>
    
 
@@ -134,13 +139,11 @@ if (typeof foundCourse == 'undefined'){
     console.log("nothing found")
 }else{
     //ToDo: pass the foung course to course-dsiplay.html
-   // window.location.href="course-display.html"
+
 }
 // data transfer to main class.html
 var str = formValue;
 var result = str.link("subclass.html ")
-//var value = formValue;
-//var mainclass = foundCourse;
 var queryString = "?<h3>" + result + "</h3><br>" ;
 window.location.href = "main class.html" + queryString;//var mainclass = foundCourse;
 var queryString = "?<h3>" + result + "</h3><br>" ;

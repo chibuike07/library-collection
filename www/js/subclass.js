@@ -1,14 +1,6 @@
 
-var queryString = decodeURIComponent(window.location.search); //parsing
-queryString = queryString.substring(1);
-var queries = queryString.split("&");
-for (var i = 0; i < queries.length; i++)
-{
-  document.write(queries[i] + "<br>");
-}
 
-
-
+ 
 
 /*$(document).ready(function () {
     $('p.para1').css('color', 'blue');
@@ -57,69 +49,8 @@ ourNewItem.addEventListener("click", createNewItem);
 function createNewItem() {
     ourList.innerHTML += "<li> " + newItemCounter + "</li>";
     newItemCounter++;
-};*/
+};
 
-   {href: "social sciences ",  Subclass; "Social sciences(Genera) 'Subclass H' ",
-      "Statistics 'Subclass HA" ,
-     "Economic theory. Demography 'Subclass HB' " ,
-     "Economic history and condition 'Subclass HC' " ,
-     "Industries Land use Labor 'Subclass HD ' " ,
-     "Transportation and communications 'Subclass HE' " ,
-     "Commerce'HF' " ,
-      "Finance 'Subclass HG' " ,
-     "Public Finance 'Subclass HJ'" ,
-    "Sociology (general) 'Subclass HM' " ,
-     " Social history and conditions. Social problems. Social reform'Subclass HN' " ,
-     "The family. Marriage. Women and Sexuality 'Subclass HQ ' " ,
-   "Society secret, benevolent 'Subclass HS' " ,
-    "Communities. Classes. Races'HF' " ,
-     "Social patholgy. Social and public welfare. Criminology 'Subclass HV' ",
-     "Socialism. communism. Anarchism'HX' " };
-
-   
-   /*
-  {href:""   "Dictionary.html", description: "Dictionary and other reference work 'Class AG' " 
-     "Indexes.html", description: "Indexes 'Class AI" 
-     "Encyclopedia.html", description: "Encyclopedia 'Class AC' " 
-     "Newspapers.html", description: "Newspapers 'Class AN' " 
-     "Periodicals.html", description: "periodicals 'class AP' "
-     "Yearbooks.html", description: "Yearbooks, Almanacs, Directories 'AY' "
-     "General philosophy.html", description: "Philosophy(General) 'Subclass B' "
-     "Logic.html", description: "Logic 'Subclass BC" },
-     "Speculative philosophy.html", description: "Speculative Philosophy 'Subclass BD' " ,
-     "Ethics.html", description: "Ethics 'Class BJ' " ,
-     "Religion.html", description: "Religion, mythology, Rationalism' Subclass BL' " ,
-    "Judaism.html", description: "Judaism 'Class BM' " ,
-     "Buddhism.html", description: "Buddhism 'Subclass BQ' " ,
-     "christainity.html", description: "Christainity 'Subclass BR" ,
-     "Bible.html", description: "The Bible 'Subclass BS' " },
-     "Dotrinal.html", description: "Dotrinal Theology 'Subclass BT' " ,
-     "Practal theology.html", description: "Practical Theology'Subclass BV' " ,
-     "Christain Denomination.html", description: "Christain Denomination'Class BM' " ,
-     "Philology.html", description: "Philology. Linguistics 'Subclass P' " ,
-     "Greek language.html", description: "Greek language and literature. Latin language and literature'Subclass PA" ,
-     "English.html", description: "English language'Subclass PE" ,
-     "General literature.html", description: "Literature(General) 'Subclass PN' " ,
-     "English literature.html", description: "English literature 'Subclass PR' " ,
-     "American Literature.html", description: "American Literature 'Subclass PS ' " ,
-     "Fictions and juvenile.html", description: "Fictions and juvenile belles lellres'Subclass PZ' " ,
-*/
-
-const renderListItems = (listNode, listData) => {
-
-    listData.map((anElement) => {
-
-        var liElement = document.createElement("li");
-        var aElement = document.createElement("a");
-
-        aElement.setAttribute("href", anElement.href);
-        aElement.innerText = anElement.description;
-
-        liElement.appendChild(aElement);
-
-        listNode.appendChild(liElement);
-    })
-}
 
 
 
@@ -142,4 +73,4 @@ function myFunction() {
         }
     }
 }
-renderListItems(ourList, listData);
+*/

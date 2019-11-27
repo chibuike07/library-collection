@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    form{
+
+padding-top:230px;
+text-align: center;
+}
+body{
+    background-color: darkslateblue;
+}
+button{
+    background-color:rgb(15, 15, 138);
+    color:#ffffff;
+    
+}
+    </style>
+</head>
+<body>
+
+        
+    <form id="f" method="POST" action="javascript:;" >
+       <input type="text" name="TextField"  placeholder="Password" size="25px"required/>
+     <button type="submit" name="passw" onclick="checkText(this.form)">Lets Go</button>
+        
+    </form>    
+
+
+    <script lang="javascript" type="text/javascript">
+     function checkText(name){
+    var entry = document.forms.f.TextField.value ;
+    var greet = "Hi";
+    var name = "OgeChi";
+    if(entry == name){
+        alert("correct!" + "\n" +  greet + "!" + "\n" + "Welcome Mrs Ogechi");
+        window.location.href = 'christopher.html';
+    } 
+       name = "JoSeph";
+  if(entry == name){
+        alert("correct!" + "\n" +  greet + "!" + "\n" + "Welcome Mr Joseph");
+        window.location.href = 'christopher.html';
+    }
+    name = "EdyFancy";
+    if(entry == name ){
+        alert("correct!" + "\n" +  greet + "!" + "\n" + "Welcome Miss Edyna");
+        window.location.href = 'christopher.html';
+    }
+
+    }
+        
+    </script>
+</body>
+</html>
